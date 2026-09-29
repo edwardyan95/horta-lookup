@@ -7,10 +7,12 @@ The app runs on each user's computer. Atlas and transform files live in a separa
 ## Windows setup
 
 1. Download this repository (**Code → Download ZIP**) and extract it into a local folder, or clone it.
-2. Install [Python 3.12](https://www.python.org/downloads/windows/), including the Python launcher.
+2. Install [Python 3.12](https://www.python.org/downloads/windows/) if it is not already installed, with Tcl/Tk enabled. The `py` launcher is optional.
 3. Double-click **Setup Windows.cmd**. This creates a local Python environment and installs the dependencies. Internet access is needed for this step.
 4. Double-click **Start lookup.cmd**. On first use, select the shared data folder that contains `manifest.json`.
 5. Choose a dataset, paste Horta **X, Y, Z in micrometers**, and click **Locate in atlas**.
+
+Setup reuses a working `.venv`, then checks `HORTA_PYTHON` (if set), common Python install folders, `python` on PATH, and finally the optional `py` launcher. For a custom installation outside PATH, set `HORTA_PYTHON` to the full path of its `python.exe`.
 
 Use **Configure data folder.cmd** to change the data location. Reopen the app afterward. The app also accepts `HORTA_LOOKUP_DATA` as an environment variable; it overrides the saved folder. Unset it when switching back to the folder chooser.
 
